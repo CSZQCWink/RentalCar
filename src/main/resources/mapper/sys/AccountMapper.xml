@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper接口名对应-->
+<mapper namespace="com.qfedu.sys.mapper.AccountMapper">
+<!-- 转入方法 -->
+    <update id="transferInMapper">
+        update account
+        set money = money + #{money}
+        where username = #{name}
+    </update>
+
+<!--  转出方法  -->
+    <update id="transferOutMapper">
+        update account
+        set money = money - #{money}
+        where username = #{name}
+    </update>
+</mapper>
